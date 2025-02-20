@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/header") %>
+  </head>
+  <body
+    class="bg-gray-200 text-gray-800 flex flex-col justify-center items-center min-h-screen"
+    style="background-color: <%= pokemon.types[0].type.name === 'fire' ? '#FF6F61' : pokemon.types[0].type.name === 'water' ? '#4592C4' : pokemon.types[0].type.name === 'grass' ? '#78C850' : pokemon.types[0].type.name === 'electric' ? '#F8D030' : pokemon.types[0].type.name === 'psychic' ? '#F85888' : pokemon.types[0].type.name === 'ice' ? '#98D8D8' : pokemon.types[0].type.name === 'dragon' ? '#7038F8' : pokemon.types[0].type.name === 'dark' ? '#705848' : pokemon.types[0].type.name === 'fairy' ? '#EE99AC' : '#A8A878' %>"
+  >
+    <div
+      class="w-96 rounded-lg shadow-lg p-5 border-4 border-black mt-5"
+      style="background-color: <%= pokemon.types[0].type.name === 'fire' ? '#E63946' : pokemon.types[0].type.name === 'water' ? '#1E6091' : pokemon.types[0].type.name === 'grass' ? '#4CAF50' : pokemon.types[0].type.name === 'electric' ? '#FFD700' : pokemon.types[0].type.name === 'psychic' ? '#D81B60' : pokemon.types[0].type.name === 'ice' ? '#00BFFF' : pokemon.types[0].type.name === 'dragon' ? '#6A5ACD' : pokemon.types[0].type.name === 'dark' ? '#5C4033' : pokemon.types[0].type.name === 'fairy' ? '#FFB6C1' : '#D3D3D3' %>"
+    >
+      <!-- Pokemonnnn Header -->
+      <div class="bg-black text-white text-center py-2 rounded-lg mb-4">
+        <h1 class="text-2xl font-bold capitalize"><%= pokemon.name %></h1>
+      </div>
+
+      <!-- Pokemonnnn Screen -->
+      <div
+        class="bg-gray-100 p-4 rounded-lg shadow-inner border-2 border-black flex flex-col items-center"
+      >
+        <img
+          src="<%= pokemon.sprites.front_default %>"
+          alt="<%= pokemon.name %>"
+          class="w-32 h-32 mb-2"
+        />
+        <div class="bg-white p-3 w-full rounded-lg border border-gray-400">
+          <p class="text-lg font-semibold">Height: <%= pokemon.height %></p>
+          <p class="text-lg font-semibold">Weight: <%= pokemon.weight %></p>
+          <p class="text-lg font-semibold">
+            Type: <%= pokemon.types.map(t => t.type.name).join(', ') %>
+          </p>
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div class="text-center mt-4">
+        <a
+          href="/"
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600"
+          >Back</a
+        >
+      </div>
+    </div>
+    <div class="w-full mt-auto"><%- include("../partials/footer") %></div>
+  </body>
+</html>
